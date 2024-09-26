@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Log;
 
 class ProductController extends Controller
 {
@@ -21,13 +22,13 @@ class ProductController extends Controller
         // Paginate results
         $products = $query->paginate(10); // Adjust the number of items per page as needed
 
-        return view('products.index', compact('products'));
+        return view('admin.products.index', compact('products'));
     }
 
     // Show the form for creating a new product
     public function create()
     {
-        return view('products.create');
+        return view('admin.products.create');
     }
 
     // Store a newly created product in storage
@@ -38,7 +39,7 @@ class ProductController extends Controller
             'description' => 'nullable|string',
             'price' => 'required|numeric|min:0',
             'stock' => 'required|integer|min:0',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
         ]);
 
         $product = new Product();
@@ -49,19 +50,20 @@ class ProductController extends Controller
 
         // Handle image upload
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('products', 'public');
-            $product->image = $imagePath;
+            $path = $request->file('image')->store('products', 'public');
+            $product->image = $path;
+            
         }
 
         $product->save();
 
-        return redirect()->route('products.index')->with('success', 'Product created successfully.');
+        return redirect()->route('admin.products.index')->with('success', 'Product created successfully.');
     }
 
     // Show the form for editing the specified product
     public function edit(Product $product)
     {
-        return view('products.edit', compact('product'));
+        return view('admin.products.edit', compact('product'));
     }
 
     // Update the specified product in storage
@@ -72,7 +74,7 @@ class ProductController extends Controller
             'description' => 'nullable|string',
             'price' => 'required|numeric|min:0',
             'stock' => 'required|integer|min:0',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
         ]);
 
         $product->product_name = $request->input('product_name');
@@ -92,7 +94,7 @@ class ProductController extends Controller
 
         $product->save();
 
-        return redirect()->route('products.index')->with('success', 'Product updated successfully.');
+        return redirect()->route('admin.products.index')->with('success', 'Product updated successfully.');
     }
 
     // Remove the specified product from storage
@@ -105,6 +107,6 @@ class ProductController extends Controller
 
         $product->delete();
 
-        return redirect()->route('products.index')->with('success', 'Product deleted successfully.');
+        return redirect()->route('admin.products.index')->with('success', 'Product deleted successfully.');
     }
 }

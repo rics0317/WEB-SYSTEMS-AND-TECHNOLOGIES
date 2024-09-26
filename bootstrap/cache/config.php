@@ -1,8 +1,9 @@
 <?php return array (
   2 => 'broadcasting',
-  4 => 'cors',
-  7 => 'hashing',
-  13 => 'view',
+  4 => 'concurrency',
+  5 => 'cors',
+  8 => 'hashing',
+  14 => 'view',
   'app' => 
   array (
     'name' => 'Laravel',
@@ -16,7 +17,7 @@
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
     'cipher' => 'AES-256-CBC',
-    'key' => 'base64:TkwnCy7BHBUqogpXF3ZDuR6ui8ofSE96cVz1x8zGi7k=',
+    'key' => 'base64:dzmJz/qJMBojxkwi3wy5hUKV6mOUN7bmOuyr+T7rLJ8=',
     'previous_keys' => 
     array (
     ),
@@ -32,24 +33,25 @@
       2 => 'Illuminate\\Bus\\BusServiceProvider',
       3 => 'Illuminate\\Cache\\CacheServiceProvider',
       4 => 'Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider',
-      5 => 'Illuminate\\Cookie\\CookieServiceProvider',
-      6 => 'Illuminate\\Database\\DatabaseServiceProvider',
-      7 => 'Illuminate\\Encryption\\EncryptionServiceProvider',
-      8 => 'Illuminate\\Filesystem\\FilesystemServiceProvider',
-      9 => 'Illuminate\\Foundation\\Providers\\FoundationServiceProvider',
-      10 => 'Illuminate\\Hashing\\HashServiceProvider',
-      11 => 'Illuminate\\Mail\\MailServiceProvider',
-      12 => 'Illuminate\\Notifications\\NotificationServiceProvider',
-      13 => 'Illuminate\\Pagination\\PaginationServiceProvider',
-      14 => 'Illuminate\\Auth\\Passwords\\PasswordResetServiceProvider',
-      15 => 'Illuminate\\Pipeline\\PipelineServiceProvider',
-      16 => 'Illuminate\\Queue\\QueueServiceProvider',
-      17 => 'Illuminate\\Redis\\RedisServiceProvider',
-      18 => 'Illuminate\\Session\\SessionServiceProvider',
-      19 => 'Illuminate\\Translation\\TranslationServiceProvider',
-      20 => 'Illuminate\\Validation\\ValidationServiceProvider',
-      21 => 'Illuminate\\View\\ViewServiceProvider',
-      22 => 'App\\Providers\\AppServiceProvider',
+      5 => 'Illuminate\\Concurrency\\ConcurrencyServiceProvider',
+      6 => 'Illuminate\\Cookie\\CookieServiceProvider',
+      7 => 'Illuminate\\Database\\DatabaseServiceProvider',
+      8 => 'Illuminate\\Encryption\\EncryptionServiceProvider',
+      9 => 'Illuminate\\Filesystem\\FilesystemServiceProvider',
+      10 => 'Illuminate\\Foundation\\Providers\\FoundationServiceProvider',
+      11 => 'Illuminate\\Hashing\\HashServiceProvider',
+      12 => 'Illuminate\\Mail\\MailServiceProvider',
+      13 => 'Illuminate\\Notifications\\NotificationServiceProvider',
+      14 => 'Illuminate\\Pagination\\PaginationServiceProvider',
+      15 => 'Illuminate\\Auth\\Passwords\\PasswordResetServiceProvider',
+      16 => 'Illuminate\\Pipeline\\PipelineServiceProvider',
+      17 => 'Illuminate\\Queue\\QueueServiceProvider',
+      18 => 'Illuminate\\Redis\\RedisServiceProvider',
+      19 => 'Illuminate\\Session\\SessionServiceProvider',
+      20 => 'Illuminate\\Translation\\TranslationServiceProvider',
+      21 => 'Illuminate\\Validation\\ValidationServiceProvider',
+      22 => 'Illuminate\\View\\ViewServiceProvider',
+      23 => 'App\\Providers\\AppServiceProvider',
     ),
     'aliases' => 
     array (
@@ -61,6 +63,7 @@
       'Broadcast' => 'Illuminate\\Support\\Facades\\Broadcast',
       'Bus' => 'Illuminate\\Support\\Facades\\Bus',
       'Cache' => 'Illuminate\\Support\\Facades\\Cache',
+      'Concurrency' => 'Illuminate\\Support\\Facades\\Concurrency',
       'Config' => 'Illuminate\\Support\\Facades\\Config',
       'Context' => 'Illuminate\\Support\\Facades\\Context',
       'Cookie' => 'Illuminate\\Support\\Facades\\Cookie',
@@ -154,8 +157,8 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\xampp\\htdocs\\e_commerce\\storage\\framework/cache/data',
-        'lock_path' => 'C:\\xampp\\htdocs\\e_commerce\\storage\\framework/cache/data',
+        'path' => 'C:\\xampp\\htdocs\\e_commerce - rics - Copy3\\storage\\framework/cache/data',
+        'lock_path' => 'C:\\xampp\\htdocs\\e_commerce - rics - Copy3\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -327,13 +330,14 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\xampp\\htdocs\\e_commerce\\storage\\app',
+        'root' => 'C:\\xampp\\htdocs\\e_commerce - rics - Copy3\\storage\\app/private',
+        'serve' => true,
         'throw' => false,
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\xampp\\htdocs\\e_commerce\\storage\\app/public',
+        'root' => 'C:\\xampp\\htdocs\\e_commerce - rics - Copy3\\storage\\app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
         'throw' => false,
@@ -353,7 +357,7 @@
     ),
     'links' => 
     array (
-      'C:\\xampp\\htdocs\\e_commerce\\public\\storage' => 'C:\\xampp\\htdocs\\e_commerce\\storage\\app/public',
+      'C:\\xampp\\htdocs\\e_commerce - rics - Copy3\\public\\storage' => 'C:\\xampp\\htdocs\\e_commerce - rics - Copy3\\storage\\app/public',
     ),
   ),
   'logging' => 
@@ -378,14 +382,14 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'C:\\xampp\\htdocs\\e_commerce\\storage\\logs/laravel.log',
+        'path' => 'C:\\xampp\\htdocs\\e_commerce - rics - Copy3\\storage\\logs/laravel.log',
         'level' => 'debug',
         'replace_placeholders' => true,
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'C:\\xampp\\htdocs\\e_commerce\\storage\\logs/laravel.log',
+        'path' => 'C:\\xampp\\htdocs\\e_commerce - rics - Copy3\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
         'replace_placeholders' => true,
@@ -450,7 +454,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'C:\\xampp\\htdocs\\e_commerce\\storage\\logs/laravel.log',
+        'path' => 'C:\\xampp\\htdocs\\e_commerce - rics - Copy3\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -526,7 +530,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'C:\\xampp\\htdocs\\e_commerce\\resources\\views/vendor/mail',
+        0 => 'C:\\xampp\\htdocs\\e_commerce - rics - Copy3\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -621,7 +625,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\xampp\\htdocs\\e_commerce\\storage\\framework/sessions',
+    'files' => 'C:\\xampp\\htdocs\\e_commerce - rics - Copy3\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -694,6 +698,10 @@
       ),
     ),
   ),
+  'concurrency' => 
+  array (
+    'driver' => 'process',
+  ),
   'cors' => 
   array (
     'paths' => 
@@ -743,9 +751,9 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\e_commerce\\resources\\views',
+      0 => 'C:\\xampp\\htdocs\\e_commerce - rics - Copy3\\resources\\views',
     ),
-    'compiled' => 'C:\\xampp\\htdocs\\e_commerce\\storage\\framework\\views',
+    'compiled' => 'C:\\xampp\\htdocs\\e_commerce - rics - Copy3\\storage\\framework\\views',
   ),
   'tinker' => 
   array (
