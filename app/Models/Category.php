@@ -1,5 +1,7 @@
 <?php
 
+// app/Models/Category.php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -9,16 +11,15 @@ class Category extends Model
 {
     use HasFactory;
 
-    // Define the table associated with the model
-    protected $table = 'categories';
+    protected $fillable = ['name', 'category_image'];
 
-    // Specify the fillable fields
-    protected $fillable = [
-        'name',
-        'description',
-        'is_active',
-    ];
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 
-    
-    
+    public function subCategories()
+    {
+        return $this->hasMany(SubCategory::class);
+    }
 }

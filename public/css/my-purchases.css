@@ -1,0 +1,129 @@
+.order-status-tabs.s {
+    display: flex;
+    background: white;
+    border-radius: 0px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.status-tab.s {
+    padding: 16px 24px;
+    cursor: pointer;
+    position: relative;
+    color: #757575;
+    text-align: center;
+    flex: 1;
+}
+.status-tab.s.active {
+    color: #ee4d2d;
+}
+.status-tab.s.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ee4d2d;
+}
+.search-container.s {
+    margin: 20px 0;
+    position: relative;
+}
+.search-container.s i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #757575;
+}
+.search-input.s {
+    width: 100%;
+    padding: 10px 40px;
+    border: 1px solid #e8e8e8;
+    border-radius: 0px;
+    font-size: 14px;
+}
+.order-card.s {
+    border: 1px solid #e8e8e8;
+    border-radius: 0px;
+    margin-bottom: 20px;
+    padding: 16px;
+}
+.product-item.s {
+    display: flex;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+.product-image.s {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 1px solid #e8e8e8;
+    border-radius: 0px;
+}
+.product-details.s {
+    flex: 1;
+    margin-left: 16px;
+}
+.product-name.s {
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+.product-variations.s {
+    color: #757575;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+.product-quantity.s {
+    color: #757575;
+    font-size: 14px;
+}
+.order-total.s {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 16px;
+    font-size: 16px;
+}
+.total-amount.s {
+    color: #ee4d2d;
+    font-weight: 500;
+    margin-left: 8px;
+}
+/* Existing styles */
+
+.order-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-rate,
+.btn-buy-again {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 0px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-rate {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.btn-buy-again {
+    background-color: #ee4d2d;
+    color: white;
+}
+
+.btn-rate:hover {
+    background-color: #e0e0e0;
+}
+
+.btn-buy-again:hover {
+    background-color: #ff5100;
+}
+

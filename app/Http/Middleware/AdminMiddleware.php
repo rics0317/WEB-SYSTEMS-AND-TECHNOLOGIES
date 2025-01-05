@@ -12,18 +12,19 @@ class AdminMiddleware
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next  
+     * @param  \Closure  $next
      * @return mixed
      */
     public function handle(Request $request, Closure $next)
     {
-        // Check if the user is authenticated and has admin role
-        if (Auth::user()->role == 'admin') {
-            return $next($request);
-       }
+        // Check if the user is authenticated
+        if (Auth::check()) {
+            // Check if the authenticated user has the admin role
+            if (Auth::user()->role->role_name === 'admin') {
+                return $next($request);
+            }
+        }
 
-       return redirect('home')->with('error','You have not admin access');
-
-       
+        return redirect('/')->with('error', 'You do not have admin access');
     }
 }

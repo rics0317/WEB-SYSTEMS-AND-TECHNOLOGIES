@@ -16,9 +16,14 @@ class UserMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::user()->role == 'user') {
-        return $next($request);
+        // Check if the user is authenticated
+        if (Auth::check()) {
+            // Check if the authenticated user has the 'user' role
+            if (Auth::user()->role->role_name === 'customer') {
+                return $next($request);
+            }
+        }
+
+        return redirect('/')->with('error', 'You do not have customer access');
     }
-    return redirect('home')->with('error','You have not user access');
-}
 }

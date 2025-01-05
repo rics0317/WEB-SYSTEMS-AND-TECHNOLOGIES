@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.modal-container1 {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal1 {
+    background: white;
+    border-radius: 4px;
+    padding: 24px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: auto;
+}
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 24px;
+    color: #333;
+}
+
+.form-row1 {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.form-group1 {
+    flex: 1;
+    position: relative;
+}
+
+.form-group1 label {
+    position: absolute;
+    top: -8px;
+    left: 8px;
+    font-size: 12px;
+    color: #999;
+    background: white;
+    padding: 0 4px;
+}
+
+input, select, .location-selector1 {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.location-selector1 {
+    cursor: pointer;
+    position: relative;
+}
+
+.location-dropdown1 {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    display: none;
+}
+
+.location-tabs1 {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+}
+
+.location-tab1 {
+    flex: 1;
+    padding: 8px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.location-tab1.active1 {
+    color: #f4511e;
+    border-bottom: 2px solid #f4511e;
+}
+
+.location-options1 {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.location-option1 {
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.location-option1:hover {
+    background-color: #f5f5f5;
+}
+
+.label-section1 {
+    margin: 24px 0;
+}
+
+.label-title1 {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.label-options1 {
+    display: flex;
+    gap: 8px;
+}
+
+.label-option1 {
+    padding: 6px 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.label-option1.active1 {
+    background-color: #fff1ef;
+    border-color: #f4511e;
+    color: #f4511e;
+}
+
+.button-group1 {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.btn1 {
+    padding: 8px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-cancel1 {
+    background: transparent;
+    color: #666;
+}
+
+.btn-submit1 {
+    background: #ec3b05;
+    color: white;
+}
+
+.margin-top1 {
+    margin-top: 16px;
+}

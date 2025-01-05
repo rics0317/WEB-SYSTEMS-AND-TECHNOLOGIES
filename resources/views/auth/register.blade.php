@@ -1,172 +1,98 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - User Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/register.css') }}">
+    <link rel="icon" href="{{ asset('images/s.png') }}" type="image/png">
+</head>
+<body>
+    <!-- Decorative elements -->
+    <i class='bx bx-star decoration star-1'></i>
+    <i class='bx bx-star decoration star-2'></i>
+    <i class='bx bx-star decoration star-3'></i>
+    <i class='bx bx-gift decoration gift-1'></i>
+    <i class='bx bx-gift decoration gift-2'></i>
 
-@section('content')
-<style>
-    /* Minecraft-style background */
-    body {
-        background-image: url('{{ asset('assets/img/MC-5.jpg') }}');
-        background-size: cover;
-        background-position: center;
-        font-family: 'Minecraft', sans-serif; /* Use a pixel-like font similar to Minecraft */
-    }
+    <div class="signup-container">
+        <!-- Promotional Content -->
+        <div class="promo-content">
+            <div class="logo">
+                <i class='bx bx-shopping-bag' style="font-size: 48px;"></i>
+            </div>
+            <h1 class="mega-sale">11.11 - 12.12<br>MEGA PAMASKO SALE</h1>
+            <div class="promo-badges">
+                <span class="promo-badge">FREE SHIPPING MIN. SPEND</span>
+                <span class="promo-badge">ON-TIME PAMASKO DELIVERY</span>
+                <span class="promo-badge">70% OFF HOLIDAY DEALS</span>
+            </div>
+        </div>
 
-    /* Center the container on the page */
-    .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh; /* Ensure the container takes full height of the viewport */
-    }
-
-    .card {
-        background-color: #fafafa; /* Light card background */
-        border: 3px solid #000; /* Add a solid border to mimic Minecraft UI */
-        width: 100%;
-        max-width: 450px;
-        padding: 20px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
-    }
-
-    .card-header {
-        text-align: center;
-        font-size: 24px;
-        font-weight: bold;
-        background-color: #4caf50; /* Minecraft green */
-        color: white;
-        padding: 10px;
-    }
-
-    /* Style for input fields */
-    .form-control {
-        border: 2px solid #000; /* Thicker border for Minecraft-like effect */
-        background-color: #fff;
-    }
-
-    /* Style for buttons */
-    .btn-primary {
-        background-color: #107C10; /* Microsoft green button */
-        border-color: #107C10;
-        color: white;
-    }
-
-    .btn-primary:hover {
-        background-color: #0f6d0f; /* Darker green on hover */
-    }
-
-    .btn-secondary {
-        background-color: #6c757d; /* Customize the color of the register button */
-        border-color: #6c757d;
-        color: white;
-    }
-
-    .btn-secondary:hover {
-        background-color: #5a6268; /* Darker shade on hover */
-        border-color: #545b62;
-    }
-
-    .btn-microsoft {
-        background-color: #2b78e4; /* Microsoft blue */
-        color: white;
-        width: 100%;
-        margin: 10px 0;
-        padding: 10px;
-        border: none;
-        font-size: 18px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .btn-microsoft img {
-        height: 20px;
-        margin-right: 10px;
-    }
-
-    .btn-microsoft:hover {
-        background-color: #225ea0;
-    }
-
-    /* Additional style adjustments */
-    .card-body {
-        padding: 20px;
-    }
-
-    .form-check-label {
-        font-size: 14px;
-    }
-</style>
-
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-
-                        <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+        <!-- Sign Up Form -->
+        <div class="signup-form">
+            <h2 class="form-title">Sign Up</h2>
+            <form action="{{ route('register') }}" method="POST">
+                @csrf
+                <div class="form-group">
+                    <input type="text" name="last_name" placeholder="Last Name" required>
+                    @error('last_name')
+                        <span class="error-message">{{ $message }}</span>
+                    @enderror
                 </div>
+                <div class="form-group">
+                    <input type="text" name="first_name" placeholder="First Name" required>
+                    @error('first_name')
+                        <span class="error-message">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email" required>
+                    @error('email')
+                        <span class="error-message">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" placeholder="Password" required>
+                    @error('password')
+                        <span class="error-message">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password_confirmation" placeholder="Confirm Password" required>
+                </div>
+                <button type="submit" class="form-submit">Sign Up</button>
+            </form>
+
+            <div class="login-link">
+                Have an account? <a href="{{ route('login') }}">Log In</a>
             </div>
         </div>
     </div>
-</div>
-@endsection
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <i class='bx bx-check-circle'></i>
+            <h2>Registration Successful!</h2>
+            <p>Please check your email to verify your account.</p>
+            <button id="closeModal">Continue</button>
+        </div>
+    </div>
+
+    <script>
+        // Show modal if success message exists
+        @if(session('success'))
+            document.getElementById('successModal').style.display = 'flex';
+        @endif
+
+        // Close modal when clicking the close button
+        document.getElementById('closeModal').addEventListener('click', function() {
+            document.getElementById('successModal').style.display = 'none';
+            window.location.href = "{{ route('verification.notice') }}";
+        });
+    </script>
+</body>
+</html>

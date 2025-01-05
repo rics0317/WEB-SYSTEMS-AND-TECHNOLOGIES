@@ -1,0 +1,94 @@
+/* reset.css */
+:root {
+    --background: #ffffff;
+    --foreground: #020817;
+    --card: #ffffff;
+    --card-foreground: #020817;
+    --primary: #0f172a;
+    --primary-foreground: #f8fafc;
+    --secondary: #f1f5f9;
+    --secondary-foreground: #0f172a;
+    --input: #e2e8f0;
+    --radius: 0.5rem;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--foreground);
+    padding: 1rem;
+}
+
+.container {
+    max-width: 24rem;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: var(--card);
+    border-radius: var(--radius);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.back-button, .button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--primary);
+    background-color: transparent;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.back-button:hover {
+    background-color: var(--secondary);
+}
+
+.button {
+    width: 100%;
+    color: var(--primary-foreground);
+    background-color: var(--primary);
+    transition: background-color 0.2s;
+    display: flex;
+    justify-content: center; /* Center the text and icon horizontally */
+    align-items: center; /* Center the text and icon vertically */
+}
+
+.button:hover {
+    background-color: var(--primary);
+    opacity: 0.9;
+}
+
+.button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.input {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--input);
+    border-radius: var(--radius);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+h2, .text-muted {
+    text-align: center;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.icon {
+    margin-right: 0.5rem; /* Add some space between the icon and the text */
+}

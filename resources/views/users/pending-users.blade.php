@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Registration - Shopee</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --shopee-color: #ee4d2d;
+            --text-color: #222222;
+            --background-color: #f6f6f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            min-height: 100vh;
+        }
+
+        .header {
+            background: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            color: var(--shopee-color);
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .logo i {
+            font-size: 2.5rem;
+        }
+
+        .header-title {
+            font-size: 1.5rem;
+            color: var(--text-color);
+            border-left: 1px solid #ddd;
+            padding-left: 1rem;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+        }
+
+        .user-profile img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .user-profile .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+
+        .user-profile:hover .dropdown {
+            display: block;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        .dropdown a:hover {
+            background-color: #f5f5f5;
+        }
+
+        .welcome-container {
+            max-width: 600px;
+            margin: 4rem auto;
+            text-align: center;
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        }
+
+        .welcome-icon {
+            width: 200px;
+            height: 200px;
+            background-color: #ffe5e0;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .welcome-icon i {
+            font-size: 5rem;
+            color: var(--shopee-color);
+        }
+
+        .welcome-title {
+            font-size: 1.75rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .welcome-description {
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .start-button {
+            background-color: var(--shopee-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .start-button:hover {
+            background-color: #d63f21;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-left">
+            <a href="{{ route('users.home') }}" class="logo">
+                <i class='bx bxs-shopping-bag'></i>
+                <span>Shopee</span>
+            </a>
+            <h1 class="header-title">Seller Registration</h1>
+        </div>
+        <div class="user-profile">
+            @auth
+                <img src="{{ Auth::user()->profile_image }}" alt="{{ Auth::user()->name }}">
+                <span>{{ Auth::user()->name }}</span>
+                <div class="dropdown">
+                    <a href="{{ route('profile') }}">Profile</a>
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                </div>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            @endauth
+        </div>
+    </header>
+
+    <main class="welcome-container">
+        <div class="welcome-icon">
+            <i class='bx bx-time'></i>
+        </div>
+        <h2 class="welcome-title">Your Application is Being Reviewed</h2>
+        <p class="welcome-description">
+            Thank you for submitting your seller registration application. Please wait for up to 1-3 days for the review process. You will be notified once your application is approved.
+        </p>
+    </main>
+</body>
+</html>

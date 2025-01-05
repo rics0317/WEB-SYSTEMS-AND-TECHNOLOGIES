@@ -1,0 +1,498 @@
+/* User Profile CSS */
+:root {
+    --primary-color: #ee4d2d;
+    --text-color: #333;
+    --bg-color: #f5f5f5;
+    --white: #fff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+.profile-container {
+    display: flex;
+    gap: 20px;
+}
+
+.profile-image-container {
+    margin-bottom: 10px;
+}
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.sidebar {
+    width: 180px;
+    background: var(--white);
+    padding: 20px;
+    border-radius: 0px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-name {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.edit-link {
+    color: #888;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.sidebar-menu a {
+    display: block;
+    padding: 10px 0;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.sidebar-menu a.active {
+    color: var(--primary-color);
+}
+
+.main-content {
+    flex: 1;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 0px;
+}
+
+.profile-header {
+    margin-bottom: 30px;
+}
+
+.profile-header h1 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.profile-header p {
+    color: #666;
+    font-size: 14px;
+}
+
+.profile-form {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: center;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: #333;
+}
+
+.form-group input {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-group input:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}
+
+.change-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.save-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 150px;
+}
+
+.save-button:hover {
+    opacity: 0.9;
+}
+.save-button2 {
+    display: block;
+    margin-top: 40px; /* Adjust the margin as needed */
+    padding: 10px 20px; /* Add padding for better click area */
+    background-color: var(--primary-color);
+    color: #fff; /* Change the text color */
+    border: none; /* Remove the border */
+    border-radius: 4px; /* Add border radius for rounded corners */
+    font-size: 14px;
+    cursor: pointer; /* Change the cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Add a transition effect */
+    margin-left: 80px;
+
+}
+
+.save-button2:hover {
+    opacity: 0.9;
+}
+
+.image-upload {
+    text-align: center;
+}
+
+.select-image-btn {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.image-requirements {
+    color: #666;
+    font-size: 12px;
+    text-align: center;
+}
+
+.profile-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    float: right;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.hidden-text {
+    display: block;
+    color: white;
+}
+
+.addresses-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.addresses-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.add-address-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 0px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.add-address-btn:hover {
+    background-color: #e53935;
+}
+
+.address-item {
+    padding: 24px 0;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+
+.address-item:last-child {
+    border-bottom: none;
+}
+
+.address-info {
+    padding-right: 120px;
+}
+
+.address-header {
+    margin-bottom: 8px;
+}
+
+.name-phone {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.name {
+    font-size: 16px;
+    color: #333;
+    font-weight: 400;
+    margin: 0;
+}
+
+.separator {
+    color: #666;
+}
+
+.phone {
+    display: inline;
+    color: #666;
+    font-size: 14px;
+}
+
+.street, .city {
+    color: #666;
+    margin: 4px 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.address-tags {
+    margin-top: 8px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 2px;
+    font-size: 12px;
+    margin-right: 4px;
+}
+
+.tag.default {
+    background-color: white;
+    color: #f44336;
+    border: 1px solid #f44336;
+}
+
+.tag.pickup {
+    background-color: white;
+    color: #666;
+    border: 1px solid #ddd;
+}
+
+.address-actions {
+    position: absolute;
+    top: 24px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+}
+
+.edit-delete-container {
+    display: flex;
+    gap: 8px;
+}
+
+.edit-btn, .delete-btn, .set-default-btn {
+    color: #2196f3;
+    text-decoration: none;
+    font-size: 14px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.set-default-btn {
+    color: #666;
+    background: white;
+    border: 1px solid #ddd;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 4px;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+    text-decoration: underline;
+}
+
+.set-default-btn:hover {
+    background-color: #f5f5f5;
+}
+
+.modal-container1 {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal1 {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        padding: 16px;
+    }
+
+    .address-actions {
+        position: static;
+        margin-top: 16px;
+    }
+
+    .address-info {
+        padding-right: 0;
+    }
+
+    .addresses-header {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+    }
+}
+
+.addresses-list {
+    margin-top: 24px;
+}
+
+.address-item:first-child {
+    padding-top: 0;
+}
+
+.add-address-btn i {
+    font-size: 18px;
+    margin-right: 4px;
+}
+
+/* New styles for Date of Birth, Gender, and Phone Number */
+.form-group .date-select-group {
+    display: flex;
+    gap: 12px;
+}
+
+.form-group .date-select-group select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    font-size: 14px;
+    min-width: 120px;
+}
+
+.form-group .radio-group {
+    display: flex;
+    gap: 24px;
+}
+
+.form-group .radio-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-group .radio-option input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--primary-color);
+}
+
+.form-group .radio-option span {
+    font-size: 14px;
+    color: #333;
+}
+
+.form-group input[name="contact"] {
+    background-color: #f5f5f5;
+}
+
+.form-group .change-link {
+    color: #1979c3;
+    text-decoration: none;
+}

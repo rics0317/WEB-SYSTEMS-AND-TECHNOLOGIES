@@ -1,0 +1,143 @@
+/* Profile Section Styles */
+.profile-section {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.profile-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.profile-info {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    display: block;
+}
+
+.profile-name {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.profile-role {
+    color: #666;
+}
+
+.profile-details {
+    list-style: none;
+}
+
+.profile-details li {
+    padding: 14.3px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    font-size: 14px; /* Adjust the font size as needed */
+}
+
+
+.view-profile-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.update-form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    flex-grow: 1;
+}
+
+.form-title {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.file-input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.file-input-group input[type="text"] {
+    flex-grow: 1;
+}
+
+.browse-btn {
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .profile-section {
+        flex-direction: column;
+    }
+
+    .profile-card {
+        width: 100%;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}

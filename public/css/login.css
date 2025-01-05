@@ -1,0 +1,226 @@
+/* public/css/login.css */
+:root {
+    --bg-primary: #1a1a2e;
+    --bg-secondary: #16213e;
+    --color-accent: #0f3460;
+    --color-text: #e94560;
+    --color-text-secondary: #a9a9a9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    background: linear-gradient(135deg, var(--color-text) 0%, var(--color-accent) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative elements */
+.decoration {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.1);
+    font-size: 40px;
+    pointer-events: none;
+}
+
+.star-1 { top: 10%; left: 10%; }
+.star-2 { top: 20%; right: 15%; }
+.star-3 { bottom: 15%; left: 20%; }
+.gift-1 { bottom: 10%; left: 30%; }
+.gift-2 { top: 30%; right: 25%; }
+
+.login-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+}
+
+.promo-content {
+    flex: 1;
+    max-width: 600px;
+    color: white;
+    padding: 40px;
+}
+
+.logo {
+    width: 200px;
+    margin-bottom: 30px;
+}
+
+.mega-sale {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.promo-badges {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.promo-badge {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.login-form {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-right: 100px; /* Move the form slightly left by adding right margin */
+}
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.form-title {
+    font-size: 24px;
+    color: #333;
+}
+
+.qr-button {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    background: none;
+    color: #666;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.form-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-text);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.form-links {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.form-link {
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.divider {
+    text-align: center;
+    margin: 20px 0;
+    color: #666;
+    position: relative;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 45%;
+    height: 1px;
+    background-color: #ddd;
+}
+
+.divider::before { left: 0; }
+.divider::after { right: 0; }
+
+.social-buttons {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: white;
+    color: #333;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.signup-link {
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}
+
+.signup-link a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+@media (max-width: 968px) {
+    .login-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .promo-content {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .login-form {
+        width: 100%;
+        max-width: 400px;
+        margin-top: 40px;
+    }
+
+    .mega-sale {
+        font-size: 36px;
+    }
+
+    .promo-badges {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
